@@ -29,8 +29,8 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">{{ $t("message.navbar.language") }}</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" @click="changeLanguage('zh-CN')">简体中文</a>
-            <a class="navbar-item" @click="changeLanguage('ja')">日本語</a>
+            <a :class="['navbar-item', { 'is-active': isCN}]" @click="changeLanguage('zh-CN')">简体中文</a>
+            <a :class="['navbar-item', { 'is-active': isJa}]" @click="changeLanguage('ja')">日本語</a>
           </div>
         </div>
       </div>
@@ -44,11 +44,13 @@ import BaseNavbarInput from './BaseNavbarInput'
 export default {
   data () {
     return {
+      locale: this.$i18n.locale,
       isVisible: false
     }
   },
   methods: {
     changeLanguage (lang) {
+      this.locale = lang
       this.$i18n.locale = lang
     },
     toggleVisibility () {
@@ -57,6 +59,14 @@ export default {
     transTo (path) {
       this.isVisible = false
       this.$router.replace(path)
+    }
+  },
+  computed: {
+    isJa: function () {
+      return this.locale.startsWith('ja')
+    },
+    isCN: function () {
+      return !this.isJa
     }
   },
   components: {
