@@ -1,26 +1,38 @@
 <template>
   <nav id="navbar" class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
     <div id="brand" class="navbar-brand">
-      <a class="navbar-item" role="button" @click="transTo('/home')">
+      <a class="navbar-item" @click="transTo('/home')">
         <strong>My Blog</strong>
       </a>
       <BaseNavbarInput hiddenClass="is-hidden-desktop"/>
 
-      <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isActive }]" role="button"
-      aria-label="menu" aria-expanded="false" @click="onClick">
+      <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isVisible }]"
+      aria-label="menu" aria-expanded="false" @click="toggleVisibility">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div :class="['navbar-menu', { 'is-active': isActive }]">
+    <div :class="['navbar-menu', { 'is-active': isVisible }]">
       <div class="navbar-start">
-        <a role="button" class="navbar-item" @click="transTo('/home')">{{ $t("message.navbar.home") }}</a>
-        <a role="button" class="navbar-item" @click="transTo('/articles')">{{ $t("message.navbar.articles") }}</a>
+        <a class="navbar-item" @click="transTo('/home')">{{ $t("message.navbar.home") }}</a>
+        <a class="navbar-item" @click="transTo('/articles')">{{ $t("message.navbar.articles") }}</a>
       </div>
       <div class="navbar-end">
-      <BaseNavbarInput hiddenClass="is-hidden-touch"/>
+        <a href="https://github.com/MasterHiei" class="navbar-item">
+          <span class="icon">
+            <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+          </span>
+        </a>
+        <BaseNavbarInput hiddenClass="is-hidden-touch"/>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">{{ $t("message.navbar.language") }}</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" @click="changeLanguage('zh-CN')">简体中文</a>
+            <a class="navbar-item" @click="changeLanguage('ja')">日本語</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -32,15 +44,18 @@ import BaseNavbarInput from './BaseNavbarInput'
 export default {
   data () {
     return {
-      isActive: false
+      isVisible: false
     }
   },
   methods: {
-    onClick () {
-      this.isActive = !this.isActive
+    changeLanguage (lang) {
+      this.$i18n.locale = lang
+    },
+    toggleVisibility () {
+      this.isVisible = !this.isVisible
     },
     transTo (path) {
-      this.isActive = false
+      this.isVisible = false
       this.$router.replace(path)
     }
   },
@@ -53,7 +68,7 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @media (min-width: 1024px)
     #navbar
-      padding 8px 12px 8px 12px
+      padding 0 12px 0 12px
 
   #navbarBurger
     height auto

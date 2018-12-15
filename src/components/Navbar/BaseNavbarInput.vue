@@ -2,7 +2,7 @@
   <div :class="['navbar-item', hiddenClass]">
     <div class="field">
       <div class="control">
-        <input class="input" type="text" :placeholder="searchHint">
+        <input class="input" type="text" :placeholder="$t('message.navbar.search')">
       </div>
     </div>
   </div>
@@ -10,14 +10,6 @@
 
 <script>
 export default {
-  props: ['hiddenClass'],
-  data () {
-    return {
-      searchHint: this.$t('message.navbar.search')
-    }
-  }
+  props: ['hiddenClass']
 }
 </script>
-
-<style lang="stylus" rel="stylesheet/stylus">
-</style>
