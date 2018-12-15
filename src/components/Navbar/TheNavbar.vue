@@ -24,8 +24,8 @@
 
     <div :class="['navbar-menu', { 'is-active': isActive }]">
       <div class="navbar-start">
-        <a role="button" class="navbar-item" @click="transTo('/home')">Home</a>
-        <a role="button" class="navbar-item" @click="transTo('/articles')">Articles</a>
+        <a role="button" class="navbar-item" @click="transTo('/home')">{{ $t("message.navbar.home") }}</a>
+        <a role="button" class="navbar-item" @click="transTo('/articles')">{{ $t("message.navbar.articles") }}</a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item is-hidden-touch">
@@ -52,7 +52,7 @@ export default {
       this.isActive = !this.isActive
     },
     transTo (path) {
-      this.onClick()
+      this.isActive = false
       this.$router.replace(path)
     }
   }
@@ -62,8 +62,8 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @media (min-width: 1024px)
     #navbar
-      padding 8px 12px 8px  12px
+      padding 8px 12px 8px 12px
 
   #navbarBurger
-    height: auto
+    height auto
 </style>

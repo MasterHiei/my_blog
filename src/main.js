@@ -10,11 +10,16 @@ Vue.use(VueI18n)
 Vue.use(Buefy)
 
 // vue-i18n Configuration
-Vue.config.lang = 'ja'
+const messages = require('./assets/locales/messages.json')
+const i18n = new VueI18n({
+  locale: 'ja',
+  messages: messages
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  i18n: i18n,
   render: h => h(App),
   router
 })

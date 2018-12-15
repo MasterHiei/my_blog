@@ -1,0 +1,18 @@
+{
+  "ja": {
+    "message": {
+      "navbar": {
+        "home": "ホーム",
+        "articles": "記事"
+      }
+    }
+  },
+  "zh-CN": {
+    "message": {
+      "navbar": {
+        "home": "首页",
+        "articles": "文章"
+      }
+    }
+  }
+}
