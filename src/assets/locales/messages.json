@@ -3,7 +3,8 @@
     "message": {
       "navbar": {
         "home": "ホーム",
-        "articles": "記事"
+        "articles": "記事",
+        "search": "記事を検索..."
       }
     }
   },
@@ -11,7 +12,8 @@
     "message": {
       "navbar": {
         "home": "首页",
-        "articles": "文章"
+        "articles": "文章",
+        "search": "搜索博客..."
       }
     }
   }

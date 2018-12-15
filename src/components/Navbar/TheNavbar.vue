@@ -4,15 +4,7 @@
       <a class="navbar-item" role="button" @click="transTo('/home')">
         <strong>My Blog</strong>
       </a>
-      <div class="navbar-item">
-        <div class="navbar-item is-hidden-desktop">
-          <div class="field">
-            <div class="control">
-              <input class="input" type="text" placeholder="Search...">
-            </div>
-          </div>
-        </div>
-      </div>
+      <BaseNavbarInput hiddenClass="is-hidden-desktop"/>
 
       <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isActive }]" role="button"
       aria-label="menu" aria-expanded="false" @click="onClick">
@@ -28,19 +20,15 @@
         <a role="button" class="navbar-item" @click="transTo('/articles')">{{ $t("message.navbar.articles") }}</a>
       </div>
       <div class="navbar-end">
-        <div class="navbar-item is-hidden-touch">
-          <div class="field">
-            <div class="control">
-              <input class="input" type="text" placeholder="Search...">
-            </div>
-          </div>
-        </div>
+      <BaseNavbarInput hiddenClass="is-hidden-touch"/>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import BaseNavbarInput from './BaseNavbarInput'
+
 export default {
   data () {
     return {
@@ -55,6 +43,9 @@ export default {
       this.isActive = false
       this.$router.replace(path)
     }
+  },
+  components: {
+    BaseNavbarInput
   }
 }
 </script>
