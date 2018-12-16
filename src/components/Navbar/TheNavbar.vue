@@ -2,7 +2,7 @@
   <nav id="navbar" class="navbar is-success" role="navigation" aria-label="main navigation">
     <div id="brand" class="navbar-brand">
       <a class="navbar-item" @click="transTo('/home')">
-        <strong>My Blog</strong>
+        My Blog
       </a>
       <BaseNavbarInput hiddenClass="is-hidden-desktop"/>
 
@@ -22,12 +22,17 @@
       <div class="navbar-end">
         <a href="https://github.com/MasterHiei/my_blog" class="navbar-item">
           <span class="icon">
-            <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+            <font-awesome-icon :icon="['fab', 'github']" fixed-width />
           </span>
         </a>
         <BaseNavbarInput hiddenClass="is-hidden-touch"/>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">{{ $t("message.navbar.language") }}</a>
+          <a class="navbar-link">
+            <div>
+              <font-awesome-icon :icon="['fas', 'globe']" fixed-width />
+              {{ $t("message.navbar.language") }}
+            </div>
+          </a>
           <div class="navbar-dropdown">
             <a :class="['navbar-item', { 'is-active': isCN }]" @click="changeLanguage('zh-CN')">简体中文</a>
             <a :class="['navbar-item', { 'is-active': isJa }]" @click="changeLanguage('ja')">日本語</a>
@@ -79,6 +84,7 @@ export default {
   @media (min-width: 1024px)
     #navbar
       padding 0 12px 0 12px
+      font-weight  bold
 
   #navbarBurger
     height auto

@@ -5,7 +5,7 @@
         "home": "ホーム",
         "articles": "記事",
         "search": "記事を検索...",
-        "language": "言語-日本語"
+        "language": "日本語"
       }
     }
   },
@@ -15,7 +15,7 @@
         "home": "首页",
         "articles": "文章",
         "search": "搜索博客...",
-        "language": "语言-简体中文"
+        "language": "简体中文"
       }
     }
   }
