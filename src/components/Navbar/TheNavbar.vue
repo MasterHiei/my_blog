@@ -1,5 +1,5 @@
 <template>
-  <nav id="navbar" class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+  <nav id="navbar" class="navbar is-success" role="navigation" aria-label="main navigation">
     <div id="brand" class="navbar-brand">
       <a class="navbar-item" @click="transTo('/home')">
         <strong>My Blog</strong>
@@ -20,7 +20,7 @@
         <a class="navbar-item" @click="transTo('/articles')">{{ $t("message.navbar.articles") }}</a>
       </div>
       <div class="navbar-end">
-        <a href="https://github.com/MasterHiei" class="navbar-item">
+        <a href="https://github.com/MasterHiei/my_blog" class="navbar-item">
           <span class="icon">
             <font-awesome-icon :icon="['fab', 'github']" size="lg" />
           </span>
@@ -29,8 +29,8 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">{{ $t("message.navbar.language") }}</a>
           <div class="navbar-dropdown">
-            <a :class="['navbar-item', { 'is-active': isCN}]" @click="changeLanguage('zh-CN')">简体中文</a>
-            <a :class="['navbar-item', { 'is-active': isJa}]" @click="changeLanguage('ja')">日本語</a>
+            <a :class="['navbar-item', { 'is-active': isCN }]" @click="changeLanguage('zh-CN')">简体中文</a>
+            <a :class="['navbar-item', { 'is-active': isJa }]" @click="changeLanguage('ja')">日本語</a>
           </div>
         </div>
       </div>

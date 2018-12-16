@@ -6,16 +6,16 @@ import Articles from '../pages/Articles/Articles.vue'
 
 Vue.use(VueRouter)
 
-// Declare All Routers
+// Declare all routes
 export default new VueRouter({
-  routers: [
+  routes: [
     {
       path: '/home',
       component: Home
     },
     {
       path: '/articles',
-      comments: Articles
+      component: Articles
     },
     {
       path: '/',
