@@ -1,9 +1,7 @@
 <template>
   <nav id="navbar" class="navbar is-success" role="navigation" aria-label="main navigation">
     <div id="brand" class="navbar-brand">
-      <a class="navbar-item" @click="transTo('/home')">
-        My Blog
-      </a>
+      <a class="navbar-item" @click="transTo('/home')">My Blog</a>
       <BaseNavbarInput hiddenClass="is-hidden-desktop"/>
 
       <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isVisible }]"
@@ -34,8 +32,8 @@
             </div>
           </a>
           <div class="navbar-dropdown">
-            <a :class="['navbar-item', { 'is-active': isCN }]" @click="changeLanguage('zh-CN')">简体中文</a>
-            <a :class="['navbar-item', { 'is-active': isJa }]" @click="changeLanguage('ja')">日本語</a>
+            <a :class="['navbar-item', { 'is-active': isZhCN }]" @click="changeLocale('zh-CN')">简体中文</a>
+            <a :class="['navbar-item', { 'is-active': isJa }]" @click="changeLocale('ja')">日本語</a>
           </div>
         </div>
       </div>
@@ -49,14 +47,16 @@ import BaseNavbarInput from './BaseNavbarInput'
 export default {
   data () {
     return {
-      locale: this.$i18n.locale,
-      isVisible: false
+      isVisible: false,
+      isJa: this.$i18n.locale === 'ja',
+      isZhCN: this.$i18n.locale === 'zh-CN'
     }
   },
   methods: {
-    changeLanguage (lang) {
-      this.locale = lang
+    changeLocale (lang) {
       this.$i18n.locale = lang
+      this.isJa = this.$i18n.locale === 'ja'
+      this.isZhCN = this.$i18n.locale === 'zh-CN'
     },
     toggleVisibility () {
       this.isVisible = !this.isVisible
@@ -64,14 +64,6 @@ export default {
     transTo (path) {
       this.isVisible = false
       this.$router.replace(path)
-    }
-  },
-  computed: {
-    isJa: function () {
-      return this.locale.startsWith('ja')
-    },
-    isCN: function () {
-      return !this.isJa
     }
   },
   components: {

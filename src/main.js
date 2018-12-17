@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store/index'
 import VueI18n from 'vue-i18n'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
@@ -31,5 +32,6 @@ new Vue({
   el: '#app',
   i18n: i18n,
   render: h => h(App),
-  router
+  router,
+  store
 })
