@@ -27,6 +27,8 @@ const i18n = new VueI18n({
   messages: messages
 })
 
+Vue.config.productionTip = false
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

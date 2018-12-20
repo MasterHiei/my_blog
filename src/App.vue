@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <TheNavbar/>
+    <TheArticleList/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar/TheNavbar'
+import TheNavbar from '@/components/Navbar/TheNavbar'
+import TheArticleList from '@/components/ArticleList/TheArticleList'
 
 export default {
   components: {
-    Navbar
+    TheNavbar,
+    TheArticleList
   }
 }
 </script>
