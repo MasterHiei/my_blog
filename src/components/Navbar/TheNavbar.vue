@@ -1,8 +1,10 @@
 <template>
-  <nav id="navbar" class="navbar has-shadow is-spaced">
+  <nav id="navbar" class="navbar is-spaced">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item">My Blog</a>
+        <a class="navbar-item" @click="transTo('/home')">
+          <h1 class="title is-4">Master Hiei</h1>
+        </a>
         <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isVisible }]" aria-label="menu" aria-expanded="false" @click="toggleVisibility">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -40,26 +42,33 @@ export default {
   data () {
     return {
       isVisible: false,
-      isJa: this.$i18n.locale === 'ja',
-      isZhCN: this.$i18n.locale === 'zh-CN'
+      locale: this.$i18n.locale,
+      isZhCN: this.$i18n.locale.startsWith('zh'),
+      isJa: this.$i18n.locale.startsWith('ja')
     }
   },
   methods: {
-    changeLocale (lang) {
-      this.$i18n.locale = lang
-      this.isJa = this.$i18n.locale === 'ja'
-      this.isZhCN = this.$i18n.locale === 'zh-CN'
+    changeLocale (locale) {
+      this.locale = locale
     },
     toggleVisibility () {
       this.isVisible = !this.isVisible
+    },
+    transTo (path) {
+      this.$router.replace(path)
+    }
+  },
+  watch: {
+    locale (val) {
+      this.isZhCN = val.startsWith('zh')
+      this.isJa = val.startsWith('ja')
+      this.$i18n.locale = val
     }
   }
 }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @media (min-width: 1024px)
-    #navbar
-      padding 0
-      font-weight  bold
+  #navbar
+    font-weight bold
 </style>

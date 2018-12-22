@@ -1,19 +1,28 @@
 <template>
-  <div id="app">
+  <div id="app" class="container is-fluid">
     <TheNavbar/>
-    <TheArticleList/>
-    <router-view/>
+    <div class="container is-fluid">
+      <TheTabs/>
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import TheNavbar from '@/components/Navbar/TheNavbar'
-import TheArticleList from '@/components/ArticleList/TheArticleList'
+import TheTabs from '@/components/Tabs/TheTabs'
 
 export default {
   components: {
     TheNavbar,
-    TheArticleList
+    TheTabs
+  },
+  created () {
+    this.requestArticles()
+  },
+  methods: {
+    ...mapActions(['requestArticles'])
   }
 }
 </script>

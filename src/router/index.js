@@ -1,8 +1,9 @@
 // Router
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../pages/Home/Home.vue'
-import Articles from '../pages/Articles/Articles.vue'
+import Home from '../views/Home.vue'
+import Articles from '../views/Articles.vue'
+import More from '../views/More.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,10 @@ export default new VueRouter({
     {
       path: '/articles',
       component: Articles
+    },
+    {
+      path: '/more',
+      component: More
     },
     {
       path: '/',

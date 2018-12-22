@@ -2,7 +2,7 @@
   <div :class="['navbar-item', hiddenClass]">
     <div class="field">
       <div class="control">
-        <input class="input" type="text" :placeholder="$t('message.navbar.search')">
+        <input class="input" type="text" :placeholder="$t('message.searchBar.search')">
       </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <template>
-  <div>
-    Home
+  <div class="container is-fluid">
   </div>
 </template>
 
 <script>
+
 export default {
 }
 </script>

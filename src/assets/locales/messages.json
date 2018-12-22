@@ -2,20 +2,30 @@
   "ja": {
     "message": {
       "navbar": {
+        "language": "日本語"
+      },
+      "tabs": {
         "home": "ホーム",
         "articles": "記事",
-        "search": "記事を検索...",
-        "language": "日本語"
+        "more": "もっと"
+      },
+      "searchBar": {
+        "search": "記事を検索..."
       }
     }
   },
   "zh-CN": {
     "message": {
       "navbar": {
+        "language": "简体中文"
+      },
+      "tabs": {
         "home": "首页",
         "articles": "文章",
-        "search": "搜索博客...",
-        "language": "简体中文"
+        "more": "更多"
+      },
+      "searchBar": {
+        "search": "搜索博客..."
       }
     }
   }
