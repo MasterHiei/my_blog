@@ -2,15 +2,15 @@
   <div class="container is-fluid">
     <div id="tabs" class="tabs is-centered">
       <ul>
-        <li :class="['tab-item', {'is-active': isHome}]">
-          <a @click="transTo('/home')">{{ $t('message.tabs.home') }}</a>
-        </li>
-        <li :class="['tab-item', {'is-active': isArticles}]">
-          <a @click="transTo('/articles')">{{ $t('message.tabs.articles') }}</a>
-        </li>
-        <li :class="['tab-item', {'is-active': isMore}]">
-          <a @click="transTo('/more')">{{ $t('message.tabs.more') }}</a>
-        </li>
+        <router-link tag="li" class="tab-item" active-class="is-active" to="/home">
+          <a>{{ $t('message.tabs.home') }}</a>
+        </router-link>
+        <router-link tag="li" class="tab-item" active-class="is-active" to="/articles">
+          <a>{{ $t('message.tabs.articles') }}</a>
+        </router-link>
+        <router-link tag="li" class="tab-item" active-class="is-active" to="/isMore">
+          <a>{{ $t('message.tabs.more') }}</a>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -18,25 +18,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      isHome: this.$route.path === '/home',
-      isArticles: this.$route.path === '/articles',
-      isMore: this.$route.path === '/more'
-    }
-  },
-  methods: {
-    transTo (path) {
-      this.$router.replace(path)
-    }
-  },
-  watch: {
-    '$route' (to, from) {
-      this.isHome = to.path === '/home'
-      this.isArticles = to.path === '/articles'
-      this.isMore = to.path === '/more'
-    }
-  }
 }
 </script>
 
