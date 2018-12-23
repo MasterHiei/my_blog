@@ -2,14 +2,15 @@
   <div id="app" class="container is-fluid">
     <the-navbar/>
     <div class="container is-fluid">
-    <the-tabs/>
-    <router-view/>
+      <the-tabs/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import TheNavbar from 'components/Navbar/TheNavbar'
 import TheTabs from 'components/Tabs/TheTabs'
 
@@ -17,12 +18,6 @@ export default {
   components: {
     TheNavbar,
     TheTabs
-  },
-  created () {
-    this.requestArticles()
-  },
-  methods: {
-    ...mapActions(['requestArticles'])
   }
 }
 </script>

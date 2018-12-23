@@ -1,7 +1,7 @@
-import { SET_ARTICLES } from './mutation-types'
+import * as types from './mutation-types'
 
 export default {
-  [SET_ARTICLES] (state, articles) {
+  [types.SET_ARTICLES] (state, articles) {
     state.articles = articles
   }
 }

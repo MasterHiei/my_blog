@@ -10,7 +10,7 @@ export const requestArticles = async (data = {}) => {
       console.log('API Success(requestArticles):\n', response)
       let data = response.data
       if (data.code === CODE_OK) {
-        resolve(data.data)
+        resolve(data.data || [])
       } else {
         reject(data.code)
       }

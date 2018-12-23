@@ -10,6 +10,11 @@
 
 <script>
 export default {
-  props: ['hiddenClass']
+  props: {
+    hiddenClass: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
