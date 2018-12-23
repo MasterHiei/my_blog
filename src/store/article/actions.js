@@ -1,4 +1,4 @@
-import { requestArticles } from '../../api/index'
+import { requestArticles } from 'api/index'
 
 export default {
   requestArticles ({ commit }) {

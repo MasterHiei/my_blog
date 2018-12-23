@@ -1,9 +1,10 @@
 // Entry
 import Vue from 'vue'
 import App from '@/App.vue'
-import router from './router'
-import store from './store/index'
+import router from '@/router'
+import store from 'store/index'
 import VueI18n from 'vue-i18n'
+import fastclick from 'fastclick'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -15,6 +16,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 Vue.use(VueI18n)
 Vue.use(Buefy)
 
+// attach fastclick
+fastclick.attach(document.body)
+
 // import fontawesome components
 library.add(fab, fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -23,7 +27,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 const initI18n = () => {
   const naviLang = navigator.language || navigator.userLanguage
   const locale = naviLang.startsWith('zh') ? 'zh-CN' : 'ja'
-  const messages = require('./assets/locales/messages.json')
+  const messages = require('@/assets/locales/messages.json')
   return new VueI18n({
     locale: locale,
     messages: messages

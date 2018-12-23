@@ -10,8 +10,8 @@
 
 <script>
 import { mapActions } from 'vuex'
-import TheNavbar from '@/components/Navbar/TheNavbar'
-import TheTabs from '@/components/Tabs/TheTabs'
+import TheNavbar from 'components/Navbar/TheNavbar'
+import TheTabs from 'components/Tabs/TheTabs'
 
 export default {
   components: {
