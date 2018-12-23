@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="container is-fluid">
-    <TheNavbar/>
+    <the-navbar/>
     <div class="container is-fluid">
-      <TheTabs/>
-      <router-view/>
+    <the-tabs/>
+    <router-view/>
     </div>
   </div>
 </template>

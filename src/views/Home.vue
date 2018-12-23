@@ -1,6 +1,6 @@
 <template>
   <div class="container is-fluid">
-    <TheArticleList/>
+    <the-article-list/>
   </div>
 </template>
 
