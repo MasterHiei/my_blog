@@ -9,8 +9,8 @@
         "articles": "記事",
         "more": "もっと"
       },
-      "searchBar": {
-        "search": "記事を検索..."
+      "searchBox": {
+        "placeholder": "記事を検索..."
       }
     }
   },
@@ -24,8 +24,8 @@
         "articles": "文章",
         "more": "更多"
       },
-      "searchBar": {
-        "search": "搜索博客..."
+      "searchBox": {
+        "placeholder": "搜索博客..."
       }
     }
   }

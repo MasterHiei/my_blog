@@ -1,15 +1,15 @@
 <template>
   <div class="container is-fluid">
-    <the-article-list/>
+    <rticle-list/>
   </div>
 </template>
 
 <script>
-import TheArticleList from 'components/ArticleList/TheArticleList'
+import ArticleList from 'components/articleList/ArticleList'
 
 export default {
   components: {
-    TheArticleList
+    ArticleList
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="container is-fluid">
-    <the-navbar/>
+    <navbar/>
     <div class="container is-fluid">
-      <the-tabs/>
+      <tabs/>
       <keep-alive>
         <router-view/>
       </keep-alive>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import TheNavbar from 'components/Navbar/TheNavbar'
-import TheTabs from 'components/Tabs/TheTabs'
+import Navbar from 'components/navbar/Navbar'
+import Tabs from 'components/tabs/Tabs'
 
 export default {
   components: {
-    TheNavbar,
-    TheTabs
+    Navbar,
+    Tabs
   }
 }
 </script>
