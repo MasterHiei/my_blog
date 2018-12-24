@@ -5,13 +5,15 @@
         <a class="navbar-item" @click="transTo('/home')">
           <h1 class="title is-4">Master Hiei</h1>
         </a>
-        <a id="navbarBurger" :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isVisible }]" aria-label="menu" aria-expanded="false" @click="toggleVisibility">
+        <a id="navbarBurger" aria-label="menu" aria-expanded="false"
+          :class="['navbar-burger burger is-hidden-desktop', { 'is-active': isOpen }]"
+          @click="toggleMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
       </div>
-      <div :class="['navbar-menu', { 'is-active': isVisible }]">
+      <div :class="['navbar-menu', { 'is-active': isOpen }]">
         <div class="navbar-end">
         <div id="localeSelector" class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -41,7 +43,7 @@
 export default {
   data () {
     return {
-      isVisible: false,
+      isOpen: false,
       locale: this.$i18n.locale,
       isZhCN: this.$i18n.locale.startsWith('zh'),
       isJa: this.$i18n.locale.startsWith('ja')
@@ -50,9 +52,10 @@ export default {
   methods: {
     changeLocale (locale) {
       this.locale = locale
+      this.toggleMenu()
     },
-    toggleVisibility () {
-      this.isVisible = !this.isVisible
+    toggleMenu () {
+      this.isOpen = !this.isOpen
     },
     transTo (path) {
       this.$router.replace(path)
@@ -68,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style scoped lang="stylus" rel="stylesheet/stylus">
   #navbar
     font-weight bold
 </style>

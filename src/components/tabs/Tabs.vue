@@ -21,9 +21,9 @@ export default {
 }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style scoped lang="stylus" rel="stylesheet/stylus">
   #tabs
-    padding-bottom 3rem
+    padding-bottom 2.5rem
   .tab-item
     font-weight bold
     @media (min-width: 1024px)
