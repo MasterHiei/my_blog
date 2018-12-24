@@ -3,9 +3,11 @@
     <navbar/>
     <div class="container is-fluid">
       <tabs/>
-      <keep-alive>
-        <router-view/>
-      </keep-alive>
+      <transition name="slide">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </transition>
     </div>
   </div>
 </template>
@@ -25,4 +27,8 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   body
     font-family -apple-system, BlinkMacSystemFont, YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Microsoft YaHei", '微软雅黑', Arial, "Meiryo", sans-serif
+  .slide-enter-active
+    transition all 0.35s
+  .slide-enter
+    transform translate3d(0, 1rem, 0)
 </style>

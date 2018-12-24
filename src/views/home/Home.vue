@@ -1,7 +1,9 @@
 <template>
   <div class="container is-fluid">
     <search-box/>
-    <article-list/>
+    <transition name="fade">
+      <article-list/>
+    </transition>
   </div>
 </template>
 
@@ -18,4 +20,8 @@ export default {
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  .fade-enter-active
+    transform opacity 0.3s
+  .fade-enter
+    opacity 0
 </style>

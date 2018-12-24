@@ -1,5 +1,5 @@
 <template>
-  <div id="searchBox" class="columns is-centered">
+  <div id="searchBox" class="columns is-centered is-marginless">
     <div class="column is-three-quarters-desktop is-full-mobile">
       <div class="field">
         <div class="control has-icons-left is-clearfix">
@@ -32,5 +32,5 @@ export default {
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   #searchBox
-    margin 0
+    padding-bottom 2rem
 </style>
